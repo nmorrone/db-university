@@ -2,49 +2,55 @@
 
 //indviduo tutte le tabelle da inserire e definisco le caratteristiche
 
-# universita_database
+# table: dipartimenti
 - id * PK AI BIGINT
-- dipartimento (collegamento con tab dipartimenti) VARCHAR ()
-- tipi di lauree in uscita VARCHAR ()
-- studenti iscritti (collegamento con tab studenti) ?
-- sbocchi professionali TEXT
+- Nome Dipartimento (collegamento con tab dipartimenti) VARCHAR ()
+- Tipi di Lauree VARCHAR ()
+- Sbocchi professionali TEXT
+- Corsi di Laurea BIGINT
 
-# dipartimenti
+# table: corsi_laurea
 - id * PK AI BIGINT
-- nome dipartimento VARCHAR()
-- corsi di laurea
-- studenti iscritti ?
+- Nome Corso di Laurea VARCHAR()
+- Corsi Interni
+- Studenti Iscritti BIGINT
 
-# corsi_di_laurea
-- id * PK AI BIGINT
-- nome corso di laurea VARCHAR()
-- corsi interni (collegamento con tab corsi interni)
-- studenti iscritti
-
-# lista_corsi_interni
+# table: corsi_interni
 - id* PK AI BIGINT
-- nome corso VARCHAR()
-- durata corso VARCHAR (60)
-- crediti corso DECIMAL (2,0)
-- insegnante corso (collegamento con tab insegnanti) VARCHAR()
-- date appelli DATE
+- Nome Corso VARCHAR()
+- Durata Corso VARCHAR (60)
+- Crediti Corso DECIMAL (2,0)
+- Insegnante BIGINT
+- Appelli BIGINT
 
-# lista_insegnanti
+# table: insegnanti
 - id * PK AI BIGINT
-- nome VARCHAR (80)
-- cognome VARCHAR(80)
-- n. telefono VARCHAR(14)
-- email VARCHAR(80)
+- Nome VARCHAR (80)
+- Cognome VARCHAR(80)
+- N. Telefono VARCHAR(14)
+- Email VARCHAR(80)
 
-# lista_studenti
+# table: studenti
 - id* PK AI BIGINT
-- nome VARCHAR(80)
-- cognome VARCHAR(80)
-- sesso VARCHAR(20)
-- data di nascita DATE
-- codice fiscale VARCHAR(16)
-- n. telefono VARCHAR(14)
-- email VARCHAR(80)
+- Nome VARCHAR(80)
+- Cognome VARCHAR(80)
+- Codice Fiscale VARCHAR(16)
+- Data di Nascita DATE
+- N. Telefono VARCHAR(14)
+- Email VARCHAR(80)
+
+# table: appelli
+- id* PK AI BIGINT
+- Tipo di Esame VARCHAR(20)
+- Durata Esame VARCHAR(80)
+- Date Appelli DATE
+- Esiti Prove ?
+
+# table: esiti
+- id* PK AI BIGINT
+- Data Esame DATE
+- Studente Iscritto BIGINT
+- Voto Esame DECIMAL (3,0)
 
 
 
